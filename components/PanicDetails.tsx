@@ -29,7 +29,7 @@ export default function PanicDetail({ id }: { id: string }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#e74c3c]"></div>
       </div>
     );
   }
@@ -60,7 +60,7 @@ export default function PanicDetail({ id }: { id: string }) {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6">
-        <Link href="/" className="text-blue-600 hover:text-blue-800">
+        <Link href="/" className="text-[#e74c3c">
           ← Back to All Alerts
         </Link>
       </div>
@@ -112,7 +112,7 @@ export default function PanicDetail({ id }: { id: string }) {
                       href={`https://www.google.com/maps?q=${panic.location.latitude},${panic.location.longitude}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800"
+                      className="text-[#e74c3c]"
                     >
                       View on Google Maps
                     </a>

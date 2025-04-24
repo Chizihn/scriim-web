@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Scriim Emergency Alert System",
-  description: "Monitor and manage emergency alerts",
+  title: "Scriim Panic System",
+  description: "Monitor and view panic alerts",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
       <body className="bg-gray-50 min-h-screen">
         <header className="bg-[#e74c3c] text-white shadow-md">
           <div className="container mx-auto px-4 py-4">
-            <h1 className="text-xl font-bold">Scriim Panic Alert System</h1>
+            <h1 className="text-xl font-bold">Scriim</h1>
           </div>
         </header>
         {children}

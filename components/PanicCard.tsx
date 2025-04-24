@@ -23,7 +23,7 @@ export default function PanicCard({ panic }: PanicCardProps) {
         <div className="mt-4">
           <Link
             href={`/panic/${panic._id}`}
-            className="text-blue-600 hover:text-blue-800 font-medium"
+            className="text-[#e74c3c] font-medium"
           >
             View Details →
           </Link>

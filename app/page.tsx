@@ -29,7 +29,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#e74c3c]"></div>
       </div>
     );
   }
@@ -56,7 +56,7 @@ export default function Home() {
 
       {panics.length === 0 ? (
         <div className="bg-gray-100 p-6 rounded-lg text-center">
-          <p className="text-gray-600">No emergency alerts found.</p>
+          <p className="text-gray-600">No alerts found.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
