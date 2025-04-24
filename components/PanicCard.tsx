@@ -1,43 +1,34 @@
-import { Panic } from "@/types/panic";
 import Link from "next/link";
+import { Panic } from "@/types/panic";
 
 interface PanicCardProps {
   panic: Panic;
 }
 
-const PanicCard = ({ panic }: PanicCardProps) => {
+export default function PanicCard({ panic }: PanicCardProps) {
   const date = new Date(panic.createdAt).toLocaleString();
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 mb-4 hover:shadow-lg transition-shadow">
-      <div className="flex justify-between items-start">
-        <h3 className="text-lg font-semibold text-gray-800">
-          {panic.userName}
-        </h3>
-        <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">
-          {panic.authorityType || "Emergency"}
-        </span>
-      </div>
-
-      <div className="mt-2 text-sm text-gray-600">
-        <p>
-          Location: {panic.location.latitude.toFixed(6)},{" "}
-          {panic.location.longitude.toFixed(6)}
-        </p>
-        <p>Contacts: {panic.contacts.length}</p>
-        <p>Created: {date}</p>
-      </div>
-
-      <div className="mt-4">
-        <Link
-          href={`/panic/${panic._id}`}
-          className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-        >
-          View Details →
-        </Link>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+      <div className="p-4">
+        <div className="flex justify-between items-start">
+          <h2 className="text-xl font-semibold text-gray-800">
+            {panic.userName}
+          </h2>
+          <span className="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">
+            {panic.authorityType || "Emergency"}
+          </span>
+        </div>
+        <p className="text-gray-500 text-sm mt-1">{date}</p>
+        <div className="mt-4">
+          <Link
+            href={`/panic/${panic._id}`}
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            View Details →
+          </Link>
+        </div>
       </div>
     </div>
   );
-};
-
-export default PanicCard;
+}

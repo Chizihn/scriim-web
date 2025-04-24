@@ -15,10 +15,10 @@ export default function PanicDetail({ id }: { id: string }) {
       try {
         const data = await getPanicById(id);
         setPanic(data);
-        setLoading(false);
       } catch (err) {
-        console.error("Error panic id", err);
+        console.error("Error fetching panic:", err);
         setError("Failed to load panic alert details. Please try again later.");
+      } finally {
         setLoading(false);
       }
     };
@@ -124,7 +124,7 @@ export default function PanicDetail({ id }: { id: string }) {
 
           <div className="border-t border-gray-200 mt-6 pt-4">
             <h2 className="text-lg font-semibold mb-2">Contact Information</h2>
-            {panic.contacts.length > 0 ? (
+            {panic.contacts && panic.contacts.length > 0 ? (
               <div className="bg-gray-50 p-3 rounded">
                 <p className="text-gray-700">
                   This alert was sent to {panic.contacts.length} contact(s).
@@ -134,7 +134,7 @@ export default function PanicDetail({ id }: { id: string }) {
               <p className="text-gray-500">
                 No contacts associated with this alert.
               </p>
-            )}{" "}
+            )}
           </div>
         </div>
       </div>

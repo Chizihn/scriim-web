@@ -15,11 +15,10 @@ export default function Home() {
       try {
         const data = await getAllPanics();
         setPanics(data);
-        setLoading(false);
       } catch (err) {
         setError("Failed to load panic alerts. Please try again later.");
-        console.log("Error fetching", err);
-
+        console.error("Error fetching panics:", err);
+      } finally {
         setLoading(false);
       }
     };
