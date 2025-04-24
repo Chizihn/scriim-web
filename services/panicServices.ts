@@ -1,6 +1,6 @@
 import { Panic } from "@/types/panic";
 
-const API_URL = "http://scriim-api.vercel.app/api"; // Adjust this to your backend URL
+const API_URL = "https://scriim-api.vercel.app/api"; // Adjust this to your backend URL
 
 export const getAllPanics = async (): Promise<Panic[]> => {
   try {
